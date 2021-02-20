@@ -8,6 +8,8 @@ import reportWebVitals from './reportWebVitals';
 
 import Counters from './components/counters';
 import Clock from './components/clock';
+import BindingAny from './components/tryBinding';
+
 // import CounterImprove from './components/counterImprove'
 // import CounterCondRender from './components/counterConditionalRendering';
 
@@ -19,7 +21,7 @@ import Clock from './components/clock';
 ReactDOM.render(
   //  put your 'Package' inside the <React.Fragment>
   <React.Fragment>
-     
+     <BindingAny />
      <Clock />
      <Counters /> 
 
