@@ -50,7 +50,7 @@ const activeJobs = jobs.filter(job => job.isActive == true); // will return id:1
 const element = <h1>{}</h1>
 
 for (let i=0; i<activeJobs.length; i++) {
-  console.log(activeJobs[i].id, activeJobs[i].isActive);
+  // console.log(activeJobs[i].id, activeJobs[i].isActive);
 }
 
 
@@ -109,7 +109,7 @@ const element = <h2>{country}, {city}, {st}</h2>
 
 
 const { name:n, state:s, age:umur} = name_age;
-console.log(n, s, umur);
+// console.log(n, s, umur);
 
 // ===========================================================
 
