@@ -1,4 +1,8 @@
 
+
+//  UNDERSTAND THIS --> https://reactjs.org/docs/state-and-lifecycle.html
+
+
 // import the package we have made
 import React from 'react';
 import ReactDOM from 'react-dom';
