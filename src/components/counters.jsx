@@ -14,7 +14,12 @@ class Counters extends Component {
        anythingx: 'okay'
     }
 
-    // handleDelete = () => 
+    handleDelete = (counterId) => {
+        // console.log('Event handler called');
+        const deletingList = this.state.counters.filter(c => c.id !== counterId);
+        // overwritting counters list value with deletingList 
+        this.setState({ counters: deletingList });
+    };
 
     render() { 
         return (
@@ -25,7 +30,16 @@ class Counters extends Component {
 
             <div>
                { this.state.counters.map( counter => 
-               <Counter key={ counter.id } value={ counter.value } id={ counter.id } />) }                
+               <Counter 
+                        // passing props here
+                        key={ counter.id } 
+                        // value={ counter.value } 
+                        onDelete={ this.handleDelete }
+                        // id={ counter.id }
+
+                        counter={ counter } // then change with 'onClick={this.props.counter.id} in counter.jsx
+                                            // also this.state = { count: this.props.counter.value in counter.jsx};
+                        />) }                  
             </div>
 
             <div>
