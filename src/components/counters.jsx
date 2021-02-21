@@ -33,10 +33,11 @@ class Counters extends Component {
                <Counter 
                         // passing props here
                         key={ counter.id } 
-                        // value={ counter.value } 
+                        
                         onDelete={ this.handleDelete }
+                        // value={ counter.value } 
                         // id={ counter.id }
-
+                        // counter can bring all the component of counters
                         counter={ counter } // then change with 'onClick={this.props.counter.id} in counter.jsx
                                             // also this.state = { count: this.props.counter.value in counter.jsx};
                         />) }                  
