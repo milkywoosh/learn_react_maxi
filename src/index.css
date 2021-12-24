@@ -1,8 +1,9 @@
-/* *{
+ head {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} */
+  background-color: rgb(90, 125, 199);
+} 
 
 body {
   margin: 0;
@@ -11,9 +12,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color:darkgrey; */
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main-border {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+

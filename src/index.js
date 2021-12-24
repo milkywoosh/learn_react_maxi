@@ -7,39 +7,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-import Counters from './components/counters';
-import Clock from './components/clock';
-import BindingAny from './components/tryBinding';
-
-// import CounterImprove from './components/counterImprove'
-// import CounterCondRender from './components/counterConditionalRendering';
-
-// import AppHello from './Apphello'
-
-
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   //  put your 'Package' inside the <React.Fragment>
   <React.Fragment>
-     <BindingAny />
-     <Clock />
-     <Counters /> 
-
-     {/* <App /> */}
- 
-     
-  </React.Fragment>, 
+    <App />
+  </React.Fragment>,
   document.getElementById('root')
- 
- 
+
+
 );
 //<App /> 
- // {/* element, document.getElementById('root'); */}
-   
+// {/* element, document.getElementById('root'); */}
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
