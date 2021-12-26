@@ -1,15 +1,17 @@
 
-.filter-year-wrapper {
+.filter-data-wrapper {
     display: flex;
     box-shadow: 0 1px 8px black;
     padding: 0.5rem;
     border-radius: 5px;
     background-color: bisque;
     margin-right: 6.5rem !important;
+    font-size: small;
 }
 
-.filter-year-label {
+.filter-data-label {
     border-radius: 5px;
+    font-size: small;
 }
 
 
