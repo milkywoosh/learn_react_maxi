@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "./UI/Card";
 import AddData from "./components/AddData/AddData";
 import AllDataShow from "./components/AllDataShow/AllDataShow";
 import './App.css';

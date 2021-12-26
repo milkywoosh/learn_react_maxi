@@ -14,13 +14,13 @@ function AllDataShow() {
             id: Math.random().toString(36).substring(2,9),
             client: 'TADA',
             currentStock: 22,
-            lastUpdate: new Date(2021, 1, 1)
+            lastUpdate: new Date(2022, 1, 1)
         },
         {
             id: Math.random().toString(36).substring(2,9),
             client: 'CCMU',
             currentStock: 22,
-            lastUpdate: new Date(2021, 1, 1)
+            lastUpdate: new Date(2020, 1, 1)
         },
     ]
 
