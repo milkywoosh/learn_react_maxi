@@ -1,10 +1,10 @@
 .card-data-show {
     border-color: black;
     width: 80%;
-    margin: 1rem auto  ;
+    margin: 0.5rem auto  ;
     display: flex;
     flex-wrap: wrap;
-    border-radius: 5px;
+    border-radius: 9px;
     
 }
 .data-show-control {
@@ -12,8 +12,9 @@
     font-weight: bold;
     font: inherit;
     justify-content: space-evenly;
-    padding: 1rem auto;
-    margin: 0.5rem auto;
+    padding: 0.5rem auto;
+    margin: 0.3rem auto;
+
 }
 
 table, th, td, tr{

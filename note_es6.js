@@ -58,11 +58,11 @@ let newObjA1 = { ...objA, age: 14 };
 
 let myArr = [1,2,3]
 function logArrayElements(element, index, array) {
-  console.log('a[' + index + '] = ' + element)
+  // console.log('a[' + index + '] = ' + element)
 }
 
 myArr.forEach((element, index, array) => {
-  console.log('a[' + index + '] = ' + element)
+  // console.log('a[' + index + '] = ' + element)
 });
 
 let arrs = [
@@ -77,7 +77,7 @@ let arrs = [
 ]
 
 let cek = [...arrs]
-console.log(cek)
+// console.log(cek)
 cek.splice(0,2) // delete from 0 untill 1
 
 let numb = [1,2,3,4,5];
@@ -92,5 +92,19 @@ let filtering = result_numb.filter( (value) => {
     return value
   }
 })
-console.log(result_numb)
-console.log(filtering)
+// console.log(result_numb)
+// console.log(filtering)
+
+
+const dateTest = new Date(2021, 1, 20)
+const dateTime = dateTest.toLocaleDateString('en-US', {day: '2-digit'});
+const month = (dateTest.getMonth()) < 10 ? '0' + String(dateTest.getMonth())  : String(dateTest.getMonth()) ;
+const month1 = dateTest.getMonth();
+const year = dateTest.getFullYear();
+
+
+console.log(`${year}-${month}-${dateTime}`)
+
+console.log(typeof(month))
+console.log(typeof(month1))
+console.log(typeof(year))

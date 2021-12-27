@@ -18,6 +18,10 @@ function FormInput() {
         }
 
         console.log(dataInput);
+
+        setClient('')
+        setCurrStock('')
+        setDateIncoming('')
     }
 
     const enterClientHandler =(event)=> {
