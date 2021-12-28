@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function FormInput() {
+
+function FormInput(props) {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [birthDate, setBirthDate] = useState('');
@@ -23,10 +24,11 @@ function FormInput() {
             id: Math.random().toString(36).substring(2,9),
             fullName: fullName,
             emailPerson: email,
-            birthDate: birthDate
+            birthDate: new Date(birthDate),
         }
 
-        console.log(inputData);
+        // console.log(inputData);
+        props.onSaveInputData(inputData)
         setFullName('')
         setEmail('')
         setBirthDate('')
