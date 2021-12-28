@@ -24,7 +24,7 @@ function FormInput(props) {
             id: Math.random().toString(36).substring(2,9),
             fullName: fullName,
             emailPerson: email,
-            birthDate: birthDate
+            birthDate: new Date(birthDate),
         }
 
         // console.log(inputData);

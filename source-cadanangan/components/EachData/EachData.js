@@ -26,7 +26,7 @@ function EachData(props) {
 
                         return (
                             <tbody >
-                                <tr>
+                                <tr key={i}>
                                     <td>{data.id}</td>
                                     <td>{data.fullName}</td>
                                     <td>{data.emailPerson}</td>

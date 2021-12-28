@@ -52,7 +52,8 @@ function FormInput(props) {
                     <input required type='date' value={birthDate} onChange={enterBirthDate} />
                 </div>
                 <div>
-                    <button type='submit'> Submit</button>
+                    <button type='submit' > Submit</button>
+                    <button onClick={props.onCancel}> Cancel</button>
                 </div>
             </form>
         </div>
