@@ -50,8 +50,9 @@ function FormInput(props) {
                 <div>
                     <label>Division</label>
                     <select value={division} onChange={inputDivisionHandler}>
-                        <option value='Finance'>Finance</option>
+                        <option value=''>Choose</option>
                         <option value='IT Dept'>IT Dept</option>
+                        <option value='Finance'>Finance</option>
                     </select>
                 </div>
                 <div>

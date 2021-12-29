@@ -5,15 +5,18 @@ function FilterData(props) {
 
     const filterHandler =(event)=> {
         props.onChangeFilter(event.target.value)
-        
+        // console.log(event.target.value)
     }
 
     return (
         <div>
             <label>Filter by Division</label>
-            <select value={props.selected}  onChange={filterHandler}>
+            <select  onChange={filterHandler}>
+                <option value=''>Choose one</option>
+                <option value='All'>All</option>
                 <option value='IT Dept'>IT Dept</option>
                 <option value='Finance'>Finance</option>
+               
             </select>
         </div>
     )

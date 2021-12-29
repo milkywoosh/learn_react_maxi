@@ -12,15 +12,20 @@ function OverviewPage(props) {
         setFilteredData(enterData)
     }
 
-    const filterDivision = props.sourceData.filter( (data) => {
-        return data.division === filteredData;
-    })
+    const filterDivision =(filteringData) => {
+        return props.sourceData.filter( (value, index, arr) => {
+           if (filteringData === 'All') {
+               return value.division
+           }
+           return value.division === filteringData;
+        })
+    }
     return (
         <Card>
             <FilterData 
                 selected={filteredData}
                 onChangeFilter={filterHandler} />
-            <AllDataTable OnDataSupply={filterDivision} />
+            <AllDataTable OnDataSupply={filterDivision(filteredData)} />
         </Card>
     )
 }
