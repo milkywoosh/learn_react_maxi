@@ -1,38 +1,55 @@
 import React, { useState } from "react";
-import './App.css';
-import NewDataInput from "./components/NewDataInput/NewDataInput";
-import TableDataShow from "./components/TableDataShow/TableDataShow";
+import DataInsertionForm from "./components/DataInsertionForm/DataInsertionForm";
 
-const DataSource = [
+
+
+const DATABASE = [
     {
         id: Math.random().toString(36).substring(2, 9),
-        fullName: 'Ben',
-        emailPerson: 'Ben@gmail.com',
-        birthDate: new Date(1990, 5, 5),
+        name: "Ben",
+        division: "IT Dept"
     },
     {
         id: Math.random().toString(36).substring(2, 9),
-        fullName: 'Ron',
-        emailPerson: 'Ron@gmail.com',
-        birthDate: new Date(1993, 3, 2),
+        name: "Ron",
+        division: "IT Dept"
     },
-];
-
+]
 
 function App(props) {
-    const [supplyData, setSupplyData] = useState(DataSource);
+    const [updateData, setUpdatedData] = useState(DATABASE);
 
-    const addDataHandler = (entriData) => {
-        setSupplyData( (prevData) => {
-            return [entriData,...prevData ];
+    // update data onInsert();
+    const UpdateInsertData = (entriData) => {
+        setUpdatedData((prevData) => {
+            return [entriData, ...prevData];
         })
     }
 
     return (
+        <div>
+            <DataInsertionForm OnSavedEnteredData={UpdateInsertData} />
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Division</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {updateData.map((data, i) => {
+                            return (
+                                <tr key={i}>
+                                    <td>{data.name}</td>
+                                    <td>{data.division}</td>
+                                </tr>
+                            )
+                        })}
 
-        <div className=''>
-            <NewDataInput onSaveData={addDataHandler}/>
-            <TableDataShow onSupplyData={supplyData} />
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

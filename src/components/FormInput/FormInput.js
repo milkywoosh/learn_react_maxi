@@ -2,58 +2,45 @@ import React, { useState } from "react";
 
 
 function FormInput(props) {
-    const [fullName, setFullName] = useState('');
-    const [email, setEmail] = useState('');
-    const [birthDate, setBirthDate] = useState('');
 
-    const enterFullName = (event) => {
-        setFullName(event.target.value)
+    const [name, setName] = useState('')
+    const [division, setDivision] = useState('')
+
+    const inputNameHandler =(event)=> {
+        setName(event.target.value)
     }
-    const enterEmail = (event) => {
-        setEmail(event.target.value)
-    }
-    const enterBirthDate = (event) => {
-        setBirthDate(event.target.value)
+    const inputDivisionHandler =(event)=> {
+        setDivision(event.target.value)
     }
 
+    const inputSubmitHandler =(e)=> {
+        e.preventDefault();
 
-    const handleSubmit = (e) => {
-        e.preventDefault(); // prevent auto filling
-
-        const inputData = {
+        const DataInput =  {
             id: Math.random().toString(36).substring(2,9),
-            fullName: fullName,
-            emailPerson: email,
-            birthDate: new Date(birthDate),
+            name: name,
+            division: division
         }
 
-        // console.log(inputData);
-        props.onSaveInputData(inputData)
-        setFullName('')
-        setEmail('')
-        setBirthDate('')
+        // console.log(DataInput);
+        props.onAddDataInput(DataInput)
+        setName('')
+        setDivision('')
     }
-
-
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={inputSubmitHandler}>
                 <div>
-                    <label>Full Name</label>
-                    <input required type='text' value={fullName} onChange={enterFullName}  />
+                    <label>Name</label>
+                    <input required value={name} onChange={inputNameHandler} placeholder="type your name"/>
                 </div>
                 <div>
-                    <label>Email</label>
-                    <input required type='email' value={email} onChange={enterEmail} />
+                    <label>Division</label>
+                    <input required value={division} onChange={inputDivisionHandler} placeholder="type division name"/>
                 </div>
                 <div>
-                    <label>Date of Birth</label>
-                    <input required type='date' value={birthDate} onChange={enterBirthDate} />
-                </div>
-                <div>
-                    <button type='submit' > Submit</button>
-                    <button onClick={props.onCancel}> Cancel</button>
+                    <button type="submit">Submit</button>
                 </div>
             </form>
         </div>
