@@ -36,6 +36,7 @@ function FormInput(props) {
 
     return (
         <div>
+            
             <form onSubmit={inputSubmitHandler}>
                 <div>
                     <label>Name</label>
@@ -48,11 +49,10 @@ function FormInput(props) {
                 </div>
                 <div>
                     <label>Division</label>
-                    <input required
-                        type='text'
-                        value={division}
-                        onChange={inputDivisionHandler}
-                        placeholder="division name" />
+                    <select value={division} onChange={inputDivisionHandler}>
+                        <option value='Finance'>Finance</option>
+                        <option value='IT Dept'>IT Dept</option>
+                    </select>
                 </div>
                 <div>
                     <label>Date of Birth</label>

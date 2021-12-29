@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import AllDataTable from "./components/AllDataTable/AllDataTable";
 import DataInsertionForm from "./components/DataInsertionForm/DataInsertionForm";
+import OverviewPage from "./components/OverviewPage/OverviewPage";
 
 
 
@@ -32,8 +32,8 @@ function App(props) {
     return (
         <div>
             <DataInsertionForm OnSavedEnteredData={UpdateInsertData} />
-            <AllDataTable OnDataSupply={updateData
-            }/>
+            <OverviewPage  sourceData={updateData}/>
+
         </div>
     )
 }
