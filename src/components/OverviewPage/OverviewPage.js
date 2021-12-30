@@ -3,29 +3,28 @@ import Card from "../../UI/Card";
 import AllDataTable from "../AllDataTable/AllDataTable";
 import FilterData from "../FilterData/FilterData";
 
-
-
 function OverviewPage(props) {
-    const [filteredData, setFilteredData] = useState('')
+    // need state change
+    const [chosenCategory, setChosenCategory] = useState('');
 
-    const filterHandler =(enterData)=> {
-        setFilteredData(enterData)
+    const setCategory = (choice) => {
+        setChosenCategory(choice)
+    }
+    const filteringData = (choice) => {
+        return (
+            props.sourceData.filter((data) => {
+                if (choice === 'All') {
+                    return data.division;
+                }
+                return data.division === choice
+            })
+        )
     }
 
-    const filterDivision =(filteringData) => {
-        return props.sourceData.filter( (value, index, arr) => {
-           if (filteringData === 'All') {
-               return value.division
-           }
-           return value.division === filteringData;
-        })
-    }
     return (
         <Card>
-            <FilterData 
-                selected={filteredData}
-                onChangeFilter={filterHandler} />
-            <AllDataTable OnDataSupply={filterDivision(filteredData)} />
+            <FilterData onReceiveData={setCategory} />
+            <AllDataTable OnDataSupply={filteringData(chosenCategory)} />
         </Card>
     )
 }

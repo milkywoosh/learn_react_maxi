@@ -17,12 +17,6 @@ const DATABASE = [
         division: "IT Dept",
         birthDate: new Date(2000, 3, 3)
     },
-    {
-        id: Math.random().toString(36).substring(2, 9),
-        name: "Tony",
-        division: "Finance",
-        birthDate: new Date(1999, 4, 4)
-    },
 ]
 
 function App(props) {
