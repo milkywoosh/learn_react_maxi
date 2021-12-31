@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "../../UI/Card";
 import AllDataTable from "../AllDataTable/AllDataTable";
 import FilterData from "../FilterData/FilterData";
+import ModalPopUp from "../ModalPopUp/ModalPopUp";
 
 function OverviewPage(props) {
     // need state change
@@ -21,11 +22,18 @@ function OverviewPage(props) {
         )
     }
 
+
+
     return (
         <Card>
-            <FilterData onReceiveData={setCategory} />
+            <FilterData
+                onReceiveData={setCategory}
+            />
             <AllDataTable OnDataSupply={filteringData(chosenCategory)} />
+
         </Card>
+
+
     )
 }
 

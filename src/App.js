@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DataInsertionForm from "./components/DataInsertionForm/DataInsertionForm";
 import OverviewPage from "./components/OverviewPage/OverviewPage";
-
+import ModalPopUp from "./components/ModalPopUp/ModalPopUp";
 
 
 const DATABASE = [
@@ -27,18 +27,28 @@ const DATABASE = [
 
 function App(props) {
     const [updateData, setUpdatedData] = useState(DATABASE);
-
+    const [popUp, setPopUp] = useState(false)
     // update data onInsert();
     const UpdateInsertData =(enteredData)=> {
         setUpdatedData( (prevData)=> {
             return [enteredData, ...prevData]
         })
     }
+    const showPopUpHandler = (state) => {
+        setPopUp(state)
+    }
+
 
     return (
         <div>
-            <DataInsertionForm OnSavedEnteredData={UpdateInsertData} />
-            <OverviewPage  sourceData={updateData}/>
+            <DataInsertionForm 
+            OnSavedEnteredData={UpdateInsertData}
+            onShowPopUp={showPopUpHandler}
+
+            />
+            {popUp ? <ModalPopUp onSetPopUp={popUp}/>: <OverviewPage  sourceData={updateData}/>}
+           
+           
 
         </div>
     )
