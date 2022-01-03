@@ -1,63 +1,70 @@
 import React, { useState } from "react";
-
+import Button from "../UI/Button/Button.js";
+import Card from "../UI/Card/Card.js";
+import styles from './FormInput.module.css';
 
 function FormInput(props) {
-    const [fullName, setFullName] = useState('');
-    const [email, setEmail] = useState('');
-    const [birthDate, setBirthDate] = useState('');
+    const [username, setUsername] = useState('')
+    const [age, setAge] = useState('')
 
-    const enterFullName = (event) => {
-        setFullName(event.target.value)
+    const inputNameHandler = (event) => {
+        setUsername(event.target.value)
     }
-    const enterEmail = (event) => {
-        setEmail(event.target.value)
-    }
-    const enterBirthDate = (event) => {
-        setBirthDate(event.target.value)
+    const inputAgeHandler = (event) => {
+        setAge(event.target.value)
     }
 
-
-    const handleSubmit = (e) => {
-        e.preventDefault(); // prevent auto filling
-
+    let lengthData = props.getLength;
+    const submitHandler = (event) => {
+        event.preventDefault();
+        lengthData++
         const inputData = {
-            id: Math.random().toString(36).substring(2,9),
-            fullName: fullName,
-            emailPerson: email,
-            birthDate: new Date(birthDate),
+            
+            id: lengthData,
+            username: username,
+            age: age,
         }
-
-        // console.log(inputData);
-        props.onSaveInputData(inputData)
-        setFullName('')
-        setEmail('')
-        setBirthDate('')
+       
+        props.onInputData(inputData);
+        setUsername('')
+        setAge('')
     }
 
+    return (
+        <Card className={`${styles['main-frame-form']}`}>
+
+                <form onSubmit={submitHandler}>
+                    <div>
+                        <label>Username</label>
+                        <input
+                            required
+                            type='text'
+                            onChange={inputNameHandler}
+                            value={username}
+                        />
+                    </div>
+                    <div>
+                        <label>Age(Years)</label>
+                        <input
+                            required
+                            type='text'
+                            onChange={inputAgeHandler}
+                            value={age}
+                        />
+                    </div>
+                    <div>
+                      <Button type='submit'>
+                          Add Data
+                      </Button>
+                    </div>
+                </form>
+
+        </Card>
 
 
-    return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Full Name</label>
-                    <input required type='text' value={fullName} onChange={enterFullName}  />
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input required type='email' value={email} onChange={enterEmail} />
-                </div>
-                <div>
-                    <label>Date of Birth</label>
-                    <input required type='date' value={birthDate} onChange={enterBirthDate} />
-                </div>
-                <div>
-                    <button type='submit' > Submit</button>
-                    <button onClick={props.onCancel}> Cancel</button>
-                </div>
-            </form>
-        </div>
     )
 }
 
 export default FormInput;
+
+

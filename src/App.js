@@ -1,39 +1,52 @@
 import React, { useState } from "react";
 import './App.css';
-import NewDataInput from "./components/NewDataInput/NewDataInput";
-import TableDataShow from "./components/TableDataShow/TableDataShow";
+import ListData from "./components/ListData/ListData";
+import NewInput from "./components/NewInput/NewInput";
+import Card from "./components/UI/Card/Card";
 
-const DataSource = [
+const DataBase = [
+
     {
-        id: Math.random().toString(36).substring(2, 9),
-        fullName: 'Ben',
-        emailPerson: 'Ben@gmail.com',
-        birthDate: new Date(1990, 5, 5),
+        id: 1,
+        username: 'John',
+        age: 12,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
-        fullName: 'Ron',
-        emailPerson: 'Ron@gmail.com',
-        birthDate: new Date(1993, 3, 2),
-    },
-];
+        id: 2,
+        username: 'Ron',
+        age: 14,
+    }
+
+]
 
 
 function App(props) {
-    const [supplyData, setSupplyData] = useState(DataSource);
+    const [sourceData, setSourceData] = useState(DataBase)
 
-    const addDataHandler = (entriData) => {
-        setSupplyData( (prevData) => {
-            return [entriData,...prevData ];
+    const updateDataHandler = (enterData) => {
+        setSourceData((prevData) => {
+            return [...prevData, enterData]
         })
     }
 
     return (
+        <>
+            <Card className='app'>
+                <NewInput onUpdate={updateDataHandler} 
+                    lenInfo={sourceData.length}
+                />
 
-        <div className=''>
-            <NewDataInput onSaveData={addDataHandler}/>
-            <TableDataShow onSupplyData={supplyData} />
-        </div>
+                {sourceData.map((data, i) => {
+                    return (
+                        <ListData
+                            key={i}
+                            id={data.id}
+                            username={data.username}
+                            age={data.age}
+                        />)
+                })}
+            </Card>
+        </>
     )
 }
 
