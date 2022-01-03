@@ -35,7 +35,7 @@ function FormInput(props) {
 
                 <form onSubmit={submitHandler}>
                     <div>
-                        <label>Username</label>
+                        <label className={styles}>Username</label>
                         <input
                             required
                             type='text'
