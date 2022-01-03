@@ -14,7 +14,9 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   //  put your 'Package' inside the <React.Fragment>
   <React.Fragment>
-    <App />
+    <div className='mainBorder'>
+      <App />
+    </div>
   </React.Fragment>,
   document.getElementById('root')
 

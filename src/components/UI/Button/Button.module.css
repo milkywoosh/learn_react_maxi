@@ -1,4 +1,4 @@
-.btnStyle {
+button {
     background-color: #af5454;
     border-radius: 4px;
     color: white;
@@ -7,12 +7,12 @@
     cursor: pointer;
 }
 
-.btnStyle:focus {
+button:focus {
     outline: none;
 }
 
-.btnStyle:hover,
-.btnStyle:active {
+button:hover,
+button:active {
     background-color: #a52a2a;
     border-color: #000000;
 }

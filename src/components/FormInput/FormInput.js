@@ -19,21 +19,23 @@ function FormInput(props) {
         event.preventDefault();
         lengthData++
         const inputData = {
-            
+
             id: lengthData,
             username: username,
             age: age,
         }
-       
+
         props.onInputData(inputData);
         setUsername('')
         setAge('')
     }
 
     return (
-        <Card className={`${styles['main-frame-form']}`}>
+        // {`${styles['main-frame-form']}`}
+        <Card className={`${styles.mainFrameForm}`}>
 
-                <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler}>
+                <div>
                     <div>
                         <label >Username</label>
                         <input
@@ -41,6 +43,7 @@ function FormInput(props) {
                             type='text'
                             onChange={inputNameHandler}
                             value={username}
+                            placeholder="your name"
                         />
                     </div>
                     <div>
@@ -50,16 +53,19 @@ function FormInput(props) {
                             type='text'
                             onChange={inputAgeHandler}
                             value={age}
+                            placeholder="your age"
                         />
                     </div>
-                    <div>
-                      <Button type='submit'>
-                          Add Data
-                      </Button>
+                    <div className={styles.buttonWrapper}>
+                        <Button type='submit' className={styles.buttonSubmit}>
+                            Add Data
+                        </Button>
                     </div>
-                </form>
+                </div>
+            </form>
 
-        </Card>
+
+        </Card >
 
 
     )

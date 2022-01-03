@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './App.css';
+import styles from './App.module.css';
 import ListData from "./components/ListData/ListData";
 import NewInput from "./components/NewInput/NewInput";
 import Card from "./components/UI/Card/Card";
@@ -30,8 +30,8 @@ function App(props) {
     }
 
     return (
-        <>
-            <Card className='app'>
+            <Card className={styles.app}>
+
                 <NewInput onUpdate={updateDataHandler} 
                     lenInfo={sourceData.length}
                 />
@@ -45,8 +45,9 @@ function App(props) {
                             age={data.age}
                         />)
                 })}
+
             </Card>
-        </>
+
     )
 }
 

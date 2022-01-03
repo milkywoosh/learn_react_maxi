@@ -21,8 +21,7 @@ code {
     monospace;
 }
 
-.main-border {
-  margin-top: 20px;
-  margin-left: 30px;
+.mainBorder {
+  padding: 3rem 10rem 3rem 10rem;
 }
 
