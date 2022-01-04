@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { NavItem } from "react-bootstrap";
 import styles from './App.module.css';
 import ListData from "./components/ListData/ListData";
 import NewInput from "./components/NewInput/NewInput";
 import Card from "./components/UI/Card/Card";
+import Button from "./components/UI/Button/Button";
 
 const DataBase = [
 
@@ -29,6 +31,13 @@ function App(props) {
         })
     }
 
+    function removeHandler (id) {
+        const newSource = sourceData.filter( (item) => item.id !== id  )
+        setSourceData(newSource)
+    }
+
+   
+    
     return (
             <Card className={styles.app}>
 
@@ -43,6 +52,10 @@ function App(props) {
                             id={data.id}
                             username={data.username}
                             age={data.age}
+
+                            //  distinguish between ()=> AnyFunction() and 
+                            // Anyfunction 'only' ??
+                            onDelete={() => removeHandler(data.id)}
                         />)
                 })}
 

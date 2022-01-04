@@ -5,16 +5,16 @@ import Button from "../UI/Button/Button.js";
 
 function ListData(props) {
 
+
     return (
         <>
             <ul >
                 <Card className={`${styles['main-frame-listData']}`}>
                     <div className={styles.textWrapper}>
-                        
+                        {`${props.id}. ${props.username} (${props.age}yo)`}
                     </div>
                     <div className={styles.btnWrapper}>
-                    {`${props.id}. ${props.username} (${props.age}yo)`}
-                        <Button>delete </Button>
+                        <Button type='button' onClick={props.onDelete}>delete </Button>
                     </div>
 
                 </Card>
