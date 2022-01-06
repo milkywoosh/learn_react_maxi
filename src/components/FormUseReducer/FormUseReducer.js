@@ -55,7 +55,7 @@ function FormInput(props) {
         const inputData = {
             id: Math.random().toString(36).substring(2, 9),
             fullName: fullName,
-            emailPerson: email,
+            emailPerson: email,ß
             birthDate: new Date(birthDate),
         }
 
