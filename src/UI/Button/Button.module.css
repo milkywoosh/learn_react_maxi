@@ -1,0 +1,14 @@
+.btnMain {
+    border-radius: 4px;
+    background-color: #9e5d13;
+    box-shadow: 0px 1px 8px black;
+    color: #ffffff;
+    cursor: pointer;
+}
+.btnMain:hover {
+    border-radius: 4px;
+    background-color: #b1824d;
+    box-shadow: 0px 1px 8px black;
+    color: #ffffff;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.inValidData {
+    background-color: #ffe4c456;
+    box-shadow: 0px 1px 08px black;
+    border-radius: 4px;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.validData {
+    background-color: aqua;
+}
+
+label {
+    display: inline-block;
+    width: 140px;
+    justify-content: flex-end;
+}
+
+input {
+    justify-content: flex-end;
+    display: inline-block;
+    margin: 0.3rem;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from '../../UI/Card';
-import FormInput from "../FormInput/FormInput";
+// import FormInput from "../FormInput/FormInput";
+import FormInputReducer from "../FormUseReducer/FormUseReducer";
 
 function NewDataInput(props) {
     const [isInputData, setInputData] = useState(true);
@@ -28,7 +29,7 @@ function NewDataInput(props) {
     return (
         <Card>
             {!isInputData &&<button onClick={onInputDataHandler}>Add New Data</button>}
-            {isInputData &&  <FormInput onCancel={offInputDataHandler} onSaveInputData={saveDataHandlerToArray} />}
+            {isInputData &&  <FormInputReducer onCancel={offInputDataHandler} onSaveInputData={saveDataHandlerToArray} />}
         </Card>
     )
 }

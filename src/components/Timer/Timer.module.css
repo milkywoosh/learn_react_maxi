@@ -1,0 +1,9 @@
+#navWrapper nav{
+    /* display: inline; */
+    /* background-color: aquamarine; */
+}
+
+#ulWrapper  li{
+    display: inline;
+    margin: 1rem;
+}

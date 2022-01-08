@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './App.css';
 import NewDataInput from "./components/NewDataInput/NewDataInput";
 import TableDataShow from "./components/TableDataShow/TableDataShow";
+import Timer from "./components/Timer/Timer";
 
 const DataSource = [
     {
@@ -33,6 +34,7 @@ function App(props) {
         <div className=''>
             <NewDataInput onSaveData={addDataHandler}/>
             <TableDataShow onSupplyData={supplyData} />
+            <Timer />
         </div>
     )
 }
