@@ -1,42 +1,36 @@
 import React, { useState } from "react";
 import './App.css';
-import Counter from "./components/CounterUseReducer/Counter";
-import NewDataInput from "./components/NewDataInput/NewDataInput";
-import TableDataShow from "./components/TableDataShow/TableDataShow";
-import Timer from "./components/Timer/Timer";
+import DataInput from "./component/DataInput/DataInput";
+
 
 const DataSource = [
     {
         id: Math.random().toString(36).substring(2, 9),
-        fullName: 'Ben',
-        emailPerson: 'Ben@gmail.com',
-        birthDate: new Date(1990, 5, 5),
-    },
-    {
-        id: Math.random().toString(36).substring(2, 9),
-        fullName: 'Ron',
-        emailPerson: 'Ron@gmail.com',
-        birthDate: new Date(1993, 3, 2),
+        email: 'aaa@email.com',
+        isValid: true,
     },
 ];
 
 
 function App(props) {
-    const [supplyData, setSupplyData] = useState(DataSource);
+    const [currData, setCurrData] = useState(DataSource);
 
-    const addDataHandler = (entriData) => {
-        setSupplyData( (prevData) => {
-            return [entriData,...prevData ];
+    const UpdataCurrValue = (enterData) => {
+        console.log(currData)
+        setCurrData((prevData) => {
+            return [enterData, ...prevData ]
         })
     }
+
 
     return (
 
         <div className=''>
-            <NewDataInput onSaveData={addDataHandler}/>
-            <TableDataShow onSupplyData={supplyData} />
-            <Timer />
-            <Counter />
+            <DataInput
+                onSupplyDataInput={UpdataCurrValue}
+                onUpdatedValue={currData}
+
+            />
         </div>
     )
 }
