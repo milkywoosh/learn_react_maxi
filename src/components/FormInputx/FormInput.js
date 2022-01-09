@@ -40,16 +40,16 @@ function FormInput(props) {
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Full Name</label>
-                    <input required type='text' value={fullName} onChange={enterFullName}  />
+                    <label htmlFor='fullname'>Full Name</label>
+                    <input id='fullname' required type='text' value={fullName} onChange={enterFullName}  />
                 </div>
                 <div>
-                    <label>Email</label>
-                    <input required type='email' value={email} onChange={enterEmail} />
+                    <label htmlFor='email'>Email</label>
+                    <input id='email' required type='email' value={email} onChange={enterEmail} />
                 </div>
                 <div>
-                    <label>Date of Birth</label>
-                    <input required type='date' value={birthDate} onChange={enterBirthDate} />
+                    <label hmtlFor='birth' >Date of Birth</label>
+                    <input id='birth' required type='date' value={birthDate} onChange={enterBirthDate} />
                 </div>
                 <div>
                     <button type='submit' > Submit</button>

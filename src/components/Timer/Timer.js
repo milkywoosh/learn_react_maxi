@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer, useRef } from 'react';
+import React, { useState, useEffect, useReducer  } from 'react';
 import Button from '../../UI/Button/Button';
 import styles from './Timer.module.css';
 
@@ -24,6 +24,7 @@ const initialTime = {
     time: Tes.getVal(),
     isRunning: false
 }
+
 const TimeReducer = (state, action) => {
     switch (action.type) {
         case "START":
