@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
+import Counter from "./components/CounterUseReducer/Counter";
 import NewDataInput from "./components/NewDataInput/NewDataInput";
 import TableDataShow from "./components/TableDataShow/TableDataShow";
 import Timer from "./components/Timer/Timer";
@@ -35,6 +36,7 @@ function App(props) {
             <NewDataInput onSaveData={addDataHandler}/>
             <TableDataShow onSupplyData={supplyData} />
             <Timer />
+            <Counter />
         </div>
     )
 }
