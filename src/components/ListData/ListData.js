@@ -5,11 +5,21 @@ import Button from "../UI/Button/Button.js";
 
 function ListData(props) {
 
-
+    const listColorByAge = (colorByAge) => {
+        if (colorByAge === 'green') {
+            return styles.greenFrame
+        }
+        if (colorByAge === 'blue') {
+            return styles.blueFrame
+        }
+        if (colorByAge === 'yellow') {
+            return styles.ylwFrame
+        }
+    }
     return (
         <>
             <ul >
-                <Card className={`${styles['main-frame-listData']}`}>
+                <Card className={`${styles.mainFrameListData} ${listColorByAge(props.category)}` }>
                     <div className={styles.textWrapper}>
                         {`${props.id}. ${props.username} (${props.age}yo)`}
                     </div>

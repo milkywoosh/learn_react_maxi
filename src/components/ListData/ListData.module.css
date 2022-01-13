@@ -1,12 +1,24 @@
-.main-frame-listData {
+.mainFrameListData{
     /* top left bottom right */
     padding: 0.6rem 1rem  ;
     box-shadow: 0px 1px 8px black;
-    background-color: bisque;
+    /* background-color: bisque; */
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
+.greenFrame {
+    background-color: #4cf123;
+}
+.blueFrame {
+    background-color: #2353f1;
+}
+.ylwFrame {
+    background-color: #f1d223;
+}
+
 
 .btnWrapper {
     display: flex;

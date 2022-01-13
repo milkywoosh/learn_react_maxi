@@ -11,12 +11,14 @@ const DataBase = [
     {
         id: 1,
         username: 'John',
-        age: 12,
+        age: 16,
+        category: 'yellow',
     },
     {
         id: 2,
         username: 'Ron',
         age: 14,
+        category: 'blue',
     }
 
 ]
@@ -52,6 +54,7 @@ function App(props) {
                             id={data.id}
                             username={data.username}
                             age={data.age}
+                            category={data.category}
 
                             //  distinguish between ()=> AnyFunction() and 
                             // Anyfunction 'only' ??
