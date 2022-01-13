@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from './App.module.css';
 import ListData from "./components/ListData/ListData";
 import NewInput from "./components/NewInput/NewInput";
+import TodoApp from "./components/TodoApp/TodoApp";
 import Card from "./components/UI/Card/Card";
 
 
@@ -61,6 +62,7 @@ function App(props) {
                             onDelete={() => removeHandler(data.id)}
                         />)
                 })}
+                <TodoApp />
 
             </Card>
 
