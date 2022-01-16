@@ -1,19 +1,21 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import Button from "../UI/Button/Button.js";
 import Card from "../UI/Card/Card.js";
 import styles from './FormInput.module.css';
 
 const initPersonalData = {
-
     name: '',
     age: 0,
     category: null,
     tes: '',
     // green, blue, red --> for list
-
 }
+
 const reducerPersonalData = (state, action) => {
+
+
     const getColorAge = (age) => {
+       
         if (age < 10) {
             return 'green'
         }
@@ -36,7 +38,7 @@ const reducerPersonalData = (state, action) => {
         case 'INPUT_AGE':
             return {
                 ...state,
-                age: action.valueAge,
+                age: parseInt(action.valueAge),
                 category: getColorAge(action.valueAge)
             }
 
@@ -48,19 +50,31 @@ const reducerPersonalData = (state, action) => {
 
 function FormInput(props) {
     const [personalData, dispatchPersonalData] = useReducer(reducerPersonalData, initPersonalData)
-
-    useState(() => {
+    const [isAgeValid, setAgeValid] = useState(null)
+    useEffect(() => {
         console.log(personalData.name)
+        return (() => {
+            // clearance
+        })
     }, [personalData.name])
 
+    useEffect( ()=> {
+        console.log('age: ----> ', typeof personalData.age)
+        if (typeof personalData.age === 'number') {
+            setAgeValid(true)
+            console.log('cek: ', isAgeValid)
+        } else {
+            setAgeValid(false)
+        }
 
-    /*
-    const [username, setUsername] = useState('')
-    const [age, setAge] = useState('')
-    */
+        return(()=> {
+            // clearance
+        })
+    }, [personalData.age])
+
 
     const inputNameHandler = (event) => {
-      
+
         dispatchPersonalData(
             {
                 type: 'INPUT_USERNAME',
@@ -116,15 +130,19 @@ function FormInput(props) {
                     <div>
                         <label>Age(Years)</label>
                         <input
+                        // the input border should be red and button should be disabled if input invalid
+                            className={isAgeValid == false ? 'redBtnNotif' : ''}
                             required
                             type='text'
                             onChange={inputAgeHandler}
-                            value={personalData.age}
+                            value={personalData.age ? personalData.age: 0}
                             placeholder="your age"
                         />
                     </div>
                     <div className={styles.buttonWrapper}>
-                        <Button type='submit' className={styles.buttonSubmit}>
+                        <Button type='submit' className={styles.buttonSubmit}
+                            disabled={isAgeValid == true ? false : true}
+                        >
                             Add Data
                         </Button>
                     </div>

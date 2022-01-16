@@ -23,5 +23,8 @@ input {
 .buttonWrapper {
     display: flex;
     justify-content: flex-end;
+}
 
+.redBtnNotif {
+    border-color: #eb2626;
 }
