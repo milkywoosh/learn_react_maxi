@@ -4,6 +4,7 @@ import styles from './App.module.css';
 import ListData from "./components/ListData/ListData";
 import NewInput from "./components/NewInput/NewInput";
 import TodoApp from "./components/TodoApp/TodoApp";
+import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
 
 
@@ -34,17 +35,18 @@ function App(props) {
         })
     }
 
-    function removeHandler (id) {
-        const newSource = sourceData.filter( (item) => item.id !== id  )
+    function removeHandler(id) {
+        const newSource = sourceData.filter((item) => item.id !== id)
         setSourceData(newSource)
     }
 
-   
-    
+
+
     return (
+        <div>
             <Card className={styles.app}>
 
-                <NewInput onUpdate={updateDataHandler} 
+                <NewInput onUpdate={updateDataHandler}
                     lenInfo={sourceData.length}
                 />
 
@@ -65,7 +67,8 @@ function App(props) {
                 <TodoApp />
 
             </Card>
-
+            
+        </div>
     )
 }
 
