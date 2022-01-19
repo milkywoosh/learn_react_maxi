@@ -6,7 +6,8 @@ import NewInput from "./components/NewInput/NewInput";
 import TodoApp from "./components/TodoApp/TodoApp";
 import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
-
+import CounterReducer from './components/CounterReducer/CounterReducer';
+import { ProviderData } from "./store/GlobalState";
 
 const DataBase = [
 
@@ -43,7 +44,7 @@ function App(props) {
 
 
     return (
-        <div>
+        <ProviderData>
             <Card className={styles.app}>
 
                 <NewInput onUpdate={updateDataHandler}
@@ -67,8 +68,10 @@ function App(props) {
                 <TodoApp />
 
             </Card>
-            
-        </div>
+            <Card className={styles.countMainWrapper}>
+                <CounterReducer />
+            </Card>
+        </ProviderData>
     )
 }
 
