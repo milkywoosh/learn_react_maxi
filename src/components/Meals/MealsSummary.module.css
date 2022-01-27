@@ -1,0 +1,23 @@
+
+/* note
+    ORDER OF CSS STYLE AFFECT THE PAGE STYLING
+*/
+.summary {
+    box-shadow: 0 1px 8px black;
+    margin: auto;
+    margin-top: -10rem;
+    text-align: left;
+    padding: 1rem;
+    width: 90%;
+    border-radius: 5px;
+    max-width: 45rem;
+    color: white;
+    padding: 1rem;
+    background-color: black;
+    position: relative;
+}
+.summary h2 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  
