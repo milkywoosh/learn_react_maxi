@@ -3,10 +3,12 @@ import React from 'react';
 import { BsFillCartFill } from 'react-icons/bs'
 import classes from './CartHeaderBtn.module.css';
 
-function CartHeaderBtn() {
+function CartHeaderBtn(props) {
 
     return (
-        <button className={classes.button}>
+        <button className={classes.button}
+            onClick={props.showCart}
+        >
             <span >
                 <BsFillCartFill className={classes.icon} />
             </span>

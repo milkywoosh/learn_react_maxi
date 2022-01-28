@@ -8,22 +8,27 @@ const TmpData = [
         price: 12.99,
     }
 ]
-function Cart() {
+function Cart(props) {
     const cartItems = TmpData.map((data) => {
-        <ul>
+        return(<ul key={data.id}>
             <li>{data.name}</li>
-        </ul>
+        </ul>)
     })
 
+    if (props.showUp === false) {
+        return null;
+    }
+
     return (
-        <Modal>
+        <Modal onClick={props.onStopPropa}>
+            
             {cartItems}
             <div className={'#'}>
                 <span>Total Amount</span>
                 <span>35.62</span>
             </div>
-            <div className={'#'}>
-                <button ÎclassName={'#'}>Close</button>
+            <div className={'#'} >
+                <button onClick={props.showModal}>Close</button>
                 <button className={'#'}>Order</button>
             </div>
         </Modal>

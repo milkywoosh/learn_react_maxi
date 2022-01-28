@@ -5,9 +5,11 @@ import classes from './Modal.module.css';
 // using REACT PORTAL -> OVERLAY PAGE/BLOCK PAGE BEHIND
 // go to publib folder --> HTML file
 
-const Backdrop = () => {
+const Backdrop = (props) => {
     return (
-        <div className={classes.backdrop}>
+        <div className={classes.backdrop}
+            onClick={props.onClick}
+            >
             
         </div>
     )
@@ -27,7 +29,10 @@ const portalOverlayElement = document.getElementById('overlay');
 function Modal (props) {
     return (
         <>
-            {ReactDOM.createPortal(<Backdrop />, portalOverlayElement)}
+            {/* onClick on  BACKDROP WILL CLOSE AUTO
+            `   but onClick on MODALOverlay will NOT have EFFECT !!
+            */}
+            {ReactDOM.createPortal(<Backdrop onClick={props.onClick}/>, portalOverlayElement)}
             {ReactDOM.createPortal(<ModalOverlay> {props.children} </ModalOverlay>, portalOverlayElement)}
             
         </>

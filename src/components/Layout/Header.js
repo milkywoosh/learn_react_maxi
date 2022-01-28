@@ -3,13 +3,13 @@ import headerImg from "../assets/meals.jpg";
 import CartHeaderBtn from './CartHeaderBtn';
 import classes from './Header.module.css';
 
-function Header() {
+function Header(props) {
 
     return(
         <Fragment>
             <header className={classes.header}>
                 <h1>React Meals</h1>
-                <CartHeaderBtn />
+                <CartHeaderBtn showCart={props.showCart}/>
             </header>
             <div className={classes.mainImage}>
                 <img src={headerImg} alt=" header description"/>
