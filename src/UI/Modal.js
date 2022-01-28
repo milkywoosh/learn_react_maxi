@@ -32,6 +32,8 @@ function Modal (props) {
             {/* onClick on  BACKDROP WILL CLOSE AUTO
             `   but onClick on MODALOverlay will NOT have EFFECT !!
             */}
+
+{/* https://medium.com/tinyso/how-to-create-a-modal-component-in-react-from-basic-to-advanced-a3357a2a716a */}
             {ReactDOM.createPortal(<Backdrop onClick={props.onClick}/>, portalOverlayElement)}
             {ReactDOM.createPortal(<ModalOverlay> {props.children} </ModalOverlay>, portalOverlayElement)}
             
