@@ -102,9 +102,19 @@ const month = (dateTest.getMonth()) < 10 ? '0' + String(dateTest.getMonth())  : 
 const month1 = dateTest.getMonth();
 const year = dateTest.getFullYear();
 
-
+/*
 console.log(`${year}-${month}-${dateTime}`)
 
 console.log(typeof(month))
 console.log(typeof(month1))
 console.log(typeof(year))
+*/
+
+
+let tes = {
+  'name': 'test',
+  'age': 12,
+}
+let data = {...tes}
+
+console.log(data)

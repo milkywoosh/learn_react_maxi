@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Modal from '../../UI/Modal';
+// import Modal from '../../UI/Modal';
 import OtherModal from '../../UI/OtherModal';
 import classes from './Cart.module.css';
 const TmpData = [

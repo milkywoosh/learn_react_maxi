@@ -2,8 +2,12 @@
     max-width: 60rem;
     width: 90%;
     margin: 2rem auto;
+
     animation: meals-appear 1s linear forwards;
   }
+  .container {
+    background-color: #f0f8ff;
+  };
   
   .meals ul {
     list-style: none;
