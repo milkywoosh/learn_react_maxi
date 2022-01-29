@@ -9,6 +9,11 @@ function Header(props) {
         <Fragment>
             <header className={classes.header}>
                 <h1>React Meals</h1>
+            <div>
+                <button
+                    onClick={'#'}
+                >Other Modal</button>
+            </div>
                 <CartHeaderBtn showCart={props.showCart}/>
             </header>
             <div className={classes.mainImage}>

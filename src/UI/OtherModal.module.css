@@ -1,5 +1,4 @@
 .backdrop {
-
     position: fixed;
     top: 0;
     left: 0;
@@ -7,37 +6,42 @@
     height: 100vh;
     z-index: 20;
     background-color: rgba(0, 0, 0, 0.596);
+    
 }
 
-.modal {
+.OtherModalStyle {
+
     position: fixed;
-    top: 20vh;
-    left: 5%;
-    width: 90%;
+    top: 25vh;
+    left: 23%;
+    right: 23%;
+    width: 50%;
+    max-width: 85%;
+    margin: auto;
     background-color: white;
     padding: 1rem;
     border-radius: 14px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 30;
     animation: slide-down 1000ms ease-out forwards;
-
-
 }
+
 
 @media (min-width: 768px) {
     .modal {
-        width: 40rem;
+        width: 10rem;
         left: calc(50% - 20rem);
     }
 }
 
-@keyframes slide-down {
+
+@keyframes slide-in {
     from {
         opacity: 0;
-       transform: translateZ(-50px);
+        transform: translateY(2rem);
     }
-      to {
+    to {
         opacity: 1;
-        transform: translateZ(50px);
-      }
+        transform: translateY(4rem);
+    }
 }

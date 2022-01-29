@@ -18,9 +18,10 @@ function App(props) {
             <Header showCart={ModalShowHandler} />
 
             <Cart
-                onStopPropa={ModalDropHandler}
+                onCloseEscKey={ModalDropHandler}
+                onDropOutsideWin={ModalDropHandler}
                 showUp={modalShow}
-                showModal={ModalDropHandler}
+                dropModal={ModalDropHandler}
             />
 
 
