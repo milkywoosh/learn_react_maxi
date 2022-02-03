@@ -16,8 +16,8 @@ var newPlayer = Object.assign({}, player, { score: 2 });
 
 // try to Change data WITHOUT MUTATION
 let objA = {
-    name: 'ben',
-    age: 12
+  name: 'ben',
+  age: 12
 }
 
 let newObjA = Object.assign({}, objA, { name: 'john' });
@@ -56,7 +56,7 @@ let newObjA1 = { ...objA, age: 14 };
 // console.log('x');
 
 
-let myArr = [1,2,3]
+let myArr = [1, 2, 3]
 function logArrayElements(element, index, array) {
   // console.log('a[' + index + '] = ' + element)
 }
@@ -71,23 +71,23 @@ let arrs = [
     age: 12
   },
   {
-    name: 'ron' ,
+    name: 'ron',
     age: 14
   },
 ]
 
 let cek = [...arrs]
 // console.log(cek)
-cek.splice(0,2) // delete from 0 untill 1
+cek.splice(0, 2) // delete from 0 untill 1
 
-let numb = [1,2,3,4,5];
-let result_numb = numb.map( (value, index) => {
-  if (value >2) {
+let numb = [1, 2, 3, 4, 5];
+let result_numb = numb.map((value, index) => {
+  if (value > 2) {
     return value
   }
 })
 
-let filtering = result_numb.filter( (value) => {
+let filtering = result_numb.filter((value) => {
   if (value != undefined) {
     return value
   }
@@ -97,8 +97,8 @@ let filtering = result_numb.filter( (value) => {
 
 
 const dateTest = new Date(2021, 1, 20)
-const dateTime = dateTest.toLocaleDateString('en-US', {day: '2-digit'});
-const month = (dateTest.getMonth()) < 10 ? '0' + String(dateTest.getMonth())  : String(dateTest.getMonth()) ;
+const dateTime = dateTest.toLocaleDateString('en-US', { day: '2-digit' });
+const month = (dateTest.getMonth()) < 10 ? '0' + String(dateTest.getMonth()) : String(dateTest.getMonth());
 const month1 = dateTest.getMonth();
 const year = dateTest.getFullYear();
 
@@ -115,6 +115,7 @@ let tes = {
   'name': 'test',
   'age': 12,
 }
-let data = {...tes}
+let data = { ...tes }
 
+console.log(tes.name)
 console.log(data)
